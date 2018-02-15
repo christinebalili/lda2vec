@@ -1,12 +1,8 @@
 #from spacy.en import English
-
 import spacy 
 spacy.load('en')
-
 from spacy.lang.en import English
-
 from spacy.attrs import LOWER, LIKE_URL, LIKE_EMAIL
-
 import numpy as np
 
 
