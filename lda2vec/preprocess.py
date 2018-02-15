@@ -1,7 +1,9 @@
 #from spacy.en import English
 import spacy 
-spacy.load('en')
-from spacy.lang.en import English
+import en_core_web_sm
+
+#spacy.load('en')
+#from spacy.lang.en import English
 from spacy.attrs import LOWER, LIKE_URL, LIKE_EMAIL
 import numpy as np
 
@@ -67,7 +69,8 @@ def tokenize(texts, max_length, skip=-2, attr=LOWER, merge=False, nlp=None,
     -2
     """
     if nlp is None:
-        nlp = English()
+        #nlp = English()
+        nlp = en_core_web_sm.load()
     data = np.zeros((len(texts), max_length), dtype='int32')
     data[:] = skip
     bad_deps = ('amod', 'compound')
