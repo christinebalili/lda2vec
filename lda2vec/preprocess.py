@@ -92,6 +92,7 @@ def tokenize(texts, max_length, skip=-2, attr=LOWER, merge=False, nlp=None,
         if len(dat) > 0:
             dat = dat.astype('int32')
             msg = "Negative indices reserved for special tokens"
+            print dat.min()
             assert dat.min() >= 0, msg
             # Replace email and URL tokens
             idx = (dat[:, 1] > 0) | (dat[:, 2] > 0)
